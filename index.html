@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Reset Button -->
+    <button class="reset-btn">Reset</button>
+
+    <!-- Timer Display -->
+    <div class="timer-display">00:00:00</div>
+
+    <!-- Timer Controls -->
+    <div class="controls">
+        <input type="number" id="hours" placeholder="HH" min="0" max="99">
+        <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+        <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+        <button id="activate">Activate</button>
+    </div>
+
+    <!-- Preset Timers -->
+    <div class="presets">
+        <button class="preset" data-hours="0" data-minutes="1" data-seconds="0">1 Min</button>
+        <button class="preset" data-hours="0" data-minutes="2" data-seconds="0">2 Min</button>
+        <button class="preset" data-hours="0" data-minutes="5" data-seconds="0">5 Min</button>
+        <button class="preset" data-hours="0" data-minutes="30" data-seconds="0">30 Min</button>
+        <button class="preset" data-hours="1" data-minutes="0" data-seconds="0">1 Hour</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
