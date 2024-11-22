@@ -1,132 +1,102 @@
-/* General Reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text */
-    height: 100vh;
+/* style.css */
+.timer {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.display {
+    font-size: 4.5rem;
+    font-family: monospace;
+    margin: 2rem 0;
+    color: #1a73e8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.controls {
+    margin: 1.5rem 0;
+}
+
+.inputs {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* Reset Button */
-.reset-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #bb1e1e; /* Dark red */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.reset-btn:hover {
-    background: #991818; /* Darker red on hover */
-}
-
-/* Timer Display */
-.timer-display {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff; /* Bright text for dark background */
-    margin: 20px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-.timer-display .milliseconds {
-    font-size: 1.5rem; /* Half the size of the main timer */
-    vertical-align: sub; /* Align milliseconds to the bottom */
-    color: #bbbbbb; /* Slightly dimmer text for milliseconds */
-}
-
-/* Controls Section */
-.controls {
+.input-group {
     display: flex;
-    gap: 10px;
-    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.inputs input[type="number"] {
+    width: 80px;
+    height: 40px;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.25rem;
+}
+
+.buttons {
+    margin-top: 1.5rem;
+}
+
+.buttons button {
+    min-width: 80px;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.preset-section {
+    margin-top: 2rem;
+}
+
+.preset-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+select.preset-select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: 120px;
+    border: 1px solid #ccc;
+}
+
+.apply-preset {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.apply-preset:hover {
+    background-color: #1557b0;
+}
+
+/* Remove spinner buttons from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    font-size: 1.2rem;
-    text-align: center;
-    border: 1px solid #555; /* Dark border */
-    border-radius: 5px;
-    background-color: #222; /* Dark input background */
-    color: #e0e0e0; /* Light text */
-    outline: none;
-}
-
-input[type="number"]:focus {
-    border-color: #007bff; /* Blue border on focus */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-button {
-    padding: 5px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #1e88e5; /* Blue button */
-    color: #ffffff; /* White text */
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #1565c0; /* Darker blue on hover */
-}
-
-/* Presets Section */
-.presets {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.preset {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    background-color: #388e3c; /* Green button */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.preset:hover {
-    background-color: #2e7d32; /* Darker green on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .timer-display {
-        font-size: 2rem;
-    }
-
-    .controls {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    input[type="number"] {
-        width: 50px;
-        font-size: 1rem;
-    }
-
-    button, .preset {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-    }
+    -moz-appearance: textfield;
 }
